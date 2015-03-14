@@ -1,10 +1,11 @@
 spring:
+  profiles: dev
   datasource:
     driverClassName: com.mysql.jdbc.Driver
     url: jdbc:mysql://192.168.1.4:3306/test?useUnicode=yes&characterEncoding=UTF-8
     username: scaffle
     password:
     
-
   jpa:
     hibernate.ddl-auto: update
+
