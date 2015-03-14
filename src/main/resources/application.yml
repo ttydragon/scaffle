@@ -1,0 +1,9 @@
+spring:
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url:
+    username:
+    password:
+
+  jpa:
+    hibernate.ddl-auto: update
