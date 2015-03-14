@@ -1,6 +1,7 @@
 package scaffle;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 import scaffle.domain.Book;
 import scaffle.service.BookRepository;
@@ -20,14 +21,14 @@ public class BookController {
     }
 
     @RequestMapping(value = "/book/{id}", method = RequestMethod.GET)
-    @ResponseBody
-    public Book getBook(@PathVariable("id") long id) {
+    @Transactional(readOnly = true)
+    public @ResponseBody Book getBook(@PathVariable("id") long id) {
         return bookRepository.findOne(id);
     }
 
     @RequestMapping(value = "/book", method = RequestMethod.POST)
-    @ResponseBody
-    public long saveBook(@RequestBody(required = true) Book book) {
+    @Transactional
+    public @ResponseBody long saveBook(@RequestBody(required = true) Book book) {
         return bookRepository.save(book).getId();
     }
 }
