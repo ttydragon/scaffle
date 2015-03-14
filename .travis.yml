@@ -1,7 +1,8 @@
 language: java
 jdk:
   - oraclejdk8
-
+before_script:
+  - mysql -e 'create database myapp_test;'
 cache:
   directories:
   - $HOME/.gradle
