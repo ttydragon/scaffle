@@ -1,9 +1,7 @@
 package scaffle;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import scaffle.domain.Book;
 import scaffle.service.BookRepository;
 
@@ -21,11 +19,15 @@ public class BookController {
         return "Do you like books?";
     }
 
-    @RequestMapping("/book")
+    @RequestMapping(value = "/book/{id}", method = RequestMethod.GET)
     @ResponseBody
-    public String saveBook() {
-        Book book = new Book("Author", "Book title");
-        bookRepository.save(book);
-        return "Book saved";
+    public Book getBook(@PathVariable("id") long id) {
+        return bookRepository.findOne(id);
+    }
+
+    @RequestMapping(value = "/book", method = RequestMethod.POST)
+    @ResponseBody
+    public long saveBook(@RequestBody(required = true) Book book) {
+        return bookRepository.save(book).getId();
     }
 }
