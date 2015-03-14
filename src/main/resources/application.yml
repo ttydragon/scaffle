@@ -1,9 +1,9 @@
 spring:
   datasource:
     driverClassName: com.mysql.jdbc.Driver
-    url:
-    username:
-    password:
+    url:jdbc:mysql://127.0.0.1:3306/hotelscan?useUnicode=yes&characterEncoding=UTF-8
+    username:travis
+    
 
   jpa:
     hibernate.ddl-auto: update
