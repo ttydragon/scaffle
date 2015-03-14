@@ -1,10 +1,9 @@
 spring:
   datasource:
     driverClassName: com.mysql.jdbc.Driver
-    url:
-    username:
-    password:
-    
+    url:127.0.0.1:3306
+    username:travis
+
 
   jpa:
     hibernate.ddl-auto: update
