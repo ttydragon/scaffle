@@ -29,6 +29,22 @@ public class User {
         return salt;
     }
 
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setSalt(String salt) {
+        this.salt = salt;
+    }
+
+    public void setType(int type) {
+        this.type = type;
+    }
+
     public int getType() {
         return type;
     }
