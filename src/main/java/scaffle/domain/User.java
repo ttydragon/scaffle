@@ -1,5 +1,6 @@
 package scaffle.domain;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -9,6 +10,7 @@ import javax.persistence.Id;
  * Date: 16.03.2015
  * Time: 23:08
  */
+@Entity
 public class User {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
