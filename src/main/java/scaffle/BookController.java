@@ -12,8 +12,12 @@ import scaffle.service.BookRepository;
 @RestController
 public class BookController {
 
+    private final BookRepository bookRepository;
+
     @Autowired
-    private BookRepository bookRepository;
+    public BookController(BookRepository bookRepository) {
+        this.bookRepository = bookRepository;
+    }
 
     @RequestMapping("/")
     public String index() {
